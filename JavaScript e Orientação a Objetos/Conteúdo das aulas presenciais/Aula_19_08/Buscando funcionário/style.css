@@ -1,0 +1,29 @@
+*{
+    text-align: center;
+}
+
+#titulo_principal{
+    color: blue;
+    font-family: Arial;
+    font-style: oblique;
+    font-size: 30px;
+}
+
+#nome_funcionario{
+    border-radius: 30px;
+    border-style: solid;
+    border-color: gray;
+}
+
+#botao_buscar{
+    border-radius: 30px;
+    border-style: solid;
+    border-color: yellowgreen;
+    background-color: yellowgreen;
+}
+
+#resultado_busca{
+    color: black;
+    font-family: Arial;
+    font-style: normal;
+}
