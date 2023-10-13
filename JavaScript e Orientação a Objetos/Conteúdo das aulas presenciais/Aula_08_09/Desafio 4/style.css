@@ -1,0 +1,22 @@
+.titulo_principal{
+    text-align: center;
+    font-family: Arial;
+}
+
+.resultado{
+    text-align: center;
+}
+
+.usuario{
+    width: 25%;
+    padding: 0px;
+    background-color: gainsboro;
+    border-radius: 30px;
+    display: inline-block;
+    font-family: ARIAL;
+}
+
+.img_usuario{
+    width: 120px;    
+    border-radius: 20px;
+}
