@@ -1,0 +1,96 @@
+create database Gravadora;
+use Gravadora;
+
+create table cd
+(
+	codigo int primary key not null,
+    	nome varchar(20),
+	gravadora varchar(20),
+    	data date
+);
+
+desc cd;
+
+create table cantor
+(
+	codigo int primary key not null,
+	nome varchar(40),
+	biografia varchar(100)
+);
+
+desc cantor;
+
+create table musica
+(
+	codigo_cd int,
+	numero int not null,
+    	titulo varchar(20),
+    	codigo_cantor int,
+    	tempo int,
+    	genero varchar(15),
+    	foreign key (codigo_cd) references cd(codigo),
+    	foreign key (codigo_cantor) references cantor(codigo)
+);
+
+desc musica;
+
+/*INSERINDO NA TABELA CD*/
+
+insert into cd (codigo, nome, gravadora, data) values (1, 'Fantasia', 'Som Preso', '1985-07-02');
+insert into cd (codigo, nome, gravadora, data) values (2, 'Fantasia de Verao', 'Som Preso', '1999-10-20');
+insert into cd (codigo, nome, gravadora, data) values (3, 'Romantico Total', 'RGB', '2001-09-21');
+insert into cd (codigo, nome, gravadora, data) values (4, 'Popular 2000', 'RGB', '2000-06-10');
+
+select * from cd;
+
+/*INSERINDO NA TABELA CANTOR*/
+
+insert into cantor (codigo, nome, biografia) 
+values (1, 'Marisa aos Montes', 'Nasceu no Rio de Janeiro em 1970. Gravou varios CDs. Formou recentemente os Carnabalistas.');
+insert into cantor (codigo, nome, biografia) 
+values (2, 'Zeca Sertanejo', 'Nasceu em Sao Paulo. Nao bebe. Nao fuma. Tem 3 filhos.');
+insert into cantor (codigo, nome, biografia) 
+values (3, 'Alexandre Xicara', 'Toca pagode desde os 12 anos. Comportamento calmo. Gravou tambem MPB');
+insert into cantor (codigo, nome, biografia) 
+values (4, 'Emerson Seringueira', 'Canta MPB e sucessos internacionais desde 1990. Vendeu mais de 3 milhoes de discos.');
+insert into cantor (codigo, nome, biografia) 
+values (5, 'Martinho do Bairro', 'Alem de pagode, canta sertanejo desde crianca. Tem familia no Rio de Janeiro');
+
+select * from cantor;
+
+/*INSERINDO NA TABELA MUSICA*/
+
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (1, 1, 'Coracao apaixonado', 1, 120, 'MPB');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (1, 2, 'Coracao dilacerado', 2, 180, 'MPB');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (1, 3, 'Mulher', 1, 120, 'PAGODE');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (1, 4, 'Mulheres apaixonadas', 4, 178, 'MPB');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (1, 5, 'Vou embora', 5, 300, 'SAMBA');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (2, 1, 'Adeus para sempre', 2, 180, 'SAMBA');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (2, 2, 'Nova infancia', 4, 198, 'MPB');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (2, 3, 'Eu voltei', 5, 345, 'MPB');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (2, 4, 'Volta para mim', 5, 532, 'SAMBA');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (3, 1, 'Amor de irmao', 4, 123, 'SAMBA');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (3, 2, 'Amigo', 3, 452, 'SERTANEJO');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (3, 3, 'Amigo para sempre', 2, 89, 'SERTANEJO');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (3, 4, 'Cancao para o amigo', 1, 365, 'MPB');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (4, 1, 'Andancas', 2, 320, 'MPB');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (4, 2, 'Irmao do coracao', 4, 180, 'MPB');
+insert into musica (codigo_cd, numero, titulo, codigo_cantor, tempo, genero)
+values (4, 3, 'Amor de mae', 3, 124, 'PAGODE');
+
+select * from musica;

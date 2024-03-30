@@ -1,0 +1,40 @@
+*{
+    text-align: center;
+}
+#titulo_principal{
+    color: blue;
+    font-family: Arial;
+    font-style: oblique;
+    font-size: 30px;
+}
+
+#nome_investidor{
+    border-radius: 30px;
+    border-style: solid;
+    border-color: gray;
+}
+
+#valor_mensalidade{
+    border-radius: 30px;
+    border-style: solid;
+    border-color: gray;
+}
+
+#tempo_contribuicao{
+    border-radius: 30px;
+    border-style: solid;
+    border-color: gray;
+}
+
+#botao_simular{
+    border-radius: 30px;
+    border-style: solid;
+    border-color: yellowgreen;
+    background-color: yellowgreen;
+}
+
+#resultado_investimento{
+    color: black;
+    font-family: Arial;
+    font-style: normal;
+}
